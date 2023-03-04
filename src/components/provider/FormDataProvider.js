@@ -1,6 +1,8 @@
 import { createContext, useContext, useState } from "react";
 
-const FormDataContext = ({ children }) => {
+const FormDataContext = createContext(undefined);
+
+export const FormDataProvider = ({ children }) => {
   const timeElapsed = Date.now();
   const today = new Date(timeElapsed).toLocaleDateString('fr-CA');
   const initialValues = {
@@ -12,10 +14,10 @@ const FormDataContext = ({ children }) => {
   const [formData, setFormData] = useState(initialValues);
   return (
     <FormDataContext.Provider
-      value={{ formData, setFormData }}>
+      value={{ formData, setFormData, initialValues }}>
       {children}
     </FormDataContext.Provider>
   );
 };
 
-export const useFormData = () => useContext(FormDataContext)
+export const useFormData = () => useContext(FormDataContext);
