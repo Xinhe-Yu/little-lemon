@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&family=Markazi+Text:wght@400;500&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Karla", "Markazi Text", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #edefee;
+  color: #333333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body:nth-child(n){  max-width: 864px;
+  margin:auto;}
+
+h1, .display-t {
+  font-family: "Markazi Text";
+  font-size: 4rem;
+  font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2, .sb-t {
+  font-family: "Markazi Text";
+  font-size: 2.5rem;
+  font-weight: 400;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h3, .lead-t {
+  font-family: "Karla";
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+h4, .sec-t {
+  font-family: "Karla";
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+h5, .sec-cat {
+  font-family: "Karla";
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+h6, .card-t {
+  font-family: "Karla";
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+p, .p-txt {
+  font-family: "Karla";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+span, .hl-txt {
+  font-family: "Karla";
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.bg-pr-g {
+  background-color: #495e57;
+}
+
+.bg-pr-y {
+  background-color: #f4ce14;
+}
+
+.bd-radius {
+  border-radius: 0.5rem;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 2rem 0;
+  max-width: 864px;
+  margin:auto;
 }
 
-.App-link {
-  color: #61dafb;
+header nav li {
+  display:inline;
+  padding: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+div.img {
+  background-size: cover;
+
+}
+
+@media screen and (min-width: 768px) {
+
+}
+@media screen and (min-width: 992px) {
+  body:nth-child(n){
+    display:grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+  .card div.img {
+    width: 18vw;
+    padding-bottom: 75%;
   }
 }
