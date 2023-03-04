@@ -23,6 +23,7 @@ const restaurantImageStyle = {
   borderRadius: "0.5rem",
 }
 const CallToAction = () => {
+
   return (
     <Section className="bg-pr">
       <div style={{ display: "flex", justifyContent: "space-between" }} className="one">
