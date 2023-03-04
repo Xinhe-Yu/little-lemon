@@ -19,20 +19,14 @@ const socials = [
   { id: 3, title: "Twitter" }
 ]
 
-/* const createListItems = (data) => {
-  const listItems = data.map(item => {
-    return <li key={item.id}><a href={item.link ? item.link : "/#"}>{item.title}</a></li>
-  });
-  return listItems;
-}; */
-
 const createListItems = (data) => {
-  return data.map(item =>
-  (<li key={item.id}>
-    <a href={item.link ? item.link : "/#"}>
-      {item.title}
-    </a>
-  </li>));
+  return data.map(item => (
+    <li key={item.id}>
+      <a href={item.link ? item.link : "/#"}>
+        {item.title}
+      </a>
+    </li>
+  ));
 };
 
 const Nav = (props) => {
