@@ -109,7 +109,6 @@ const BookingPage = () => {
   };
 
   const availableTimes = initializeTimes();
-  console.log(isconfirmed)
   return (
     <Section className="bg-white">
       <BookingForm availableTimes={availableTimes} today={today} isconfirmed={isconfirmed} setConfirmation={setConfirmation} />
