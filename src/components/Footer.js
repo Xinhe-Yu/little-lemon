@@ -4,7 +4,7 @@ import Nav, { Contacts, Socials } from "./Nav"
 const Footer = () => {
   return (
     <footer>
-      <nav >
+      <nav>
         <h6>Navigation</h6>
         <Nav className="lead-t" />
       </nav>

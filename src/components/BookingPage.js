@@ -5,31 +5,35 @@ import BookingForm from "./BookingForm";
 
 const BookingPage = () => {
   const [isconfirmed, setConfirmation] = useState(false);
+
   const timeElapsed = Date.now();
   const today = new Date(timeElapsed).toLocaleDateString('fr-CA');
-  const day = parseInt(today.slice(8, 10));
+  const addDays = (date, days) => {
+    var result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  };
+  const endDay = addDays(today, 42).toLocaleDateString('fr-CA');
 
   const initializeTimes = () => {
     let availableTimes = {};
-    for (let i = day; i <= 31; i++) {
-      let date;
+    for (let i = today; i !== endDay; i = addDays(i, 1).toLocaleDateString('fr-CA')) {
       if (i % 7 === 5) {
         continue;
       } else if (i < 10) {
-        date = `2023-03-0${i}`;
-        availableTimes[date] = fetchAPI(new Date(date));
+        availableTimes[i] = fetchAPI(new Date(i));
       } else {
-        date = `2023-03-${i}`;
-        availableTimes[date] = fetchAPI(new Date(date));
+        availableTimes[i] = fetchAPI(new Date(i));
       }
     }
     return availableTimes
   };
 
   const availableTimes = initializeTimes();
+
   return (
-    <Section className="bg-white">
-      <BookingForm availableTimes={availableTimes} today={today} isconfirmed={isconfirmed} setConfirmation={setConfirmation} />
+    <Section className="bg-white" containerName={"bookingForm"}>
+      <BookingForm availableTimes={availableTimes} today={today} endDay={endDay} isconfirmed={isconfirmed} setConfirmation={setConfirmation} />
     </Section>
   )
 }

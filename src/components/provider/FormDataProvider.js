@@ -3,11 +3,9 @@ import { createContext, useContext, useState } from "react";
 const FormDataContext = createContext(undefined);
 
 export const FormDataProvider = ({ children }) => {
-  const timeElapsed = Date.now();
-  const today = new Date(timeElapsed).toLocaleDateString('fr-CA');
   const initialValues = {
-    date: today,
-    time: "17:00",
+    date: "",
+    time: "",
     number: "2",
     occasion: "",
   };

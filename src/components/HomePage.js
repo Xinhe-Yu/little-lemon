@@ -4,6 +4,7 @@ import Card from "./layout/Card";
 import img1 from "../assets/greek_salad.jpg";
 import img2 from "../assets/bruchetta.svg";
 import img3 from "../assets/lemon_dessert.jpg";
+
 const specials = [
   {
     id: "1",
@@ -32,7 +33,7 @@ const specials = [
 const HomePage = () => {
   const specialListitems = specials.map(item => {
     return (
-      < Card
+      <Card
         title={item.title}
         price={item.price}
         description={item.description}
@@ -42,18 +43,12 @@ const HomePage = () => {
   })
 
   return (
-    <Section className="bg-white" style={{ paddingTop: "10rem" }}>
-      <div
-        className="one"
-        style={{
-          alignItems: "center",
-          justifyContent: "space-between",
-          display: "flex"
-        }}>
-        <h1 style={{ display: "inline" }}>This weeks specials!</h1>
-        <Button style={{}}>Online Menu</Button>
+    <Section className="bg-white" containerName={"top-bottom special"}>
+      <div>
+        <h1>This weeks specials!</h1>
+        <Button>Online Menu</Button>
       </div>
-      <div style={{ display: "flex" }}>
+      <div>
         {specialListitems}
       </div>
     </Section>

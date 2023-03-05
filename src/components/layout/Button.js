@@ -1,11 +1,14 @@
 import { useState } from "react"
 
-const Button = ({ style, children, clickHandler, backgroundColor }) => {
+const Button = ({ style, children, clickHandler, backgroundColor, isValid }) => {
   const [NotOnHover, setOnHover] = useState("true");
+  const validation = isValid == null ? true : isValid;
   const bgColor = backgroundColor ? backgroundColor : "#495e57";
   const btnStyle = {
-    backgroundColor: NotOnHover ? "#f4ce14" : bgColor,
-    color: NotOnHover ? "#333333" : "#edefee",
+    backgroundColor: !validation ? "#636363" :
+      NotOnHover ? "#f4ce14" : bgColor,
+    color: !validation ? "#bbbbbb" :
+      NotOnHover ? "#333333" : "#edefee",
     borderRadius: "0.5rem",
     borderWidth: 0,
     padding: "0.5rem",
@@ -14,7 +17,7 @@ const Button = ({ style, children, clickHandler, backgroundColor }) => {
     display: "inline-block",
     textAlign: "center",
     border: "none",
-    cursor: "pointer",
+    cursor: !validation ? "not-allowed" : "pointer",
   };
 
   return (
@@ -24,6 +27,8 @@ const Button = ({ style, children, clickHandler, backgroundColor }) => {
       className="sec-t"
       style={{ ...btnStyle, ...style }}
       onClick={clickHandler}
+      disabled={validation ? 0 : 1}
+      aria-label="On Click"
     >
       {children}
     </button>

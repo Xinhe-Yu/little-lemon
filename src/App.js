@@ -6,6 +6,8 @@ import CallToAction from './components/CallToAction';
 import HomePage from './components/HomePage';
 import BookingPage from './components/BookingPage';
 import ConfirmedBooking from './components/ConfirmedBooking';
+import Chicago from './components/Chicago';
+import CustomersSay from './components/CustomersSay';
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
           <Route path="/booking" element={<BookingPage />} />
           <Route path="/confirmed" element={<ConfirmedBooking />} />
         </Routes>
+        <CustomersSay />
+        <Chicago />
         <Footer />
       </main>
 

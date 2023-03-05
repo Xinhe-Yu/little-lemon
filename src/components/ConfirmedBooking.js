@@ -4,9 +4,8 @@ import { useFormData } from "./provider/FormDataProvider";
 
 const ConfirmedBooking = () => {
   const { formData } = useFormData();
-  console.log(formData);
   return (
-    <Section >
+    <Section containerName={"left-right confirmation"}>
       <div>
         <img src={img} alt="Little Lemon Restaurant"></img>
       </div>
@@ -15,7 +14,8 @@ const ConfirmedBooking = () => {
         <p>{formData.date} {formData.time} </p>
         <p>Dinner at Littler Lemon</p>
         <p>{formData.number} person</p>
-        {formData.occasion ? <p>Happy {formData.occasion}!</p> : null}
+        <p>
+          {formData.occasion ? `Happy ${formData.occasion}! and t` : `T`}hanks for your reservation! </p>
       </div>
     </Section>
   )
